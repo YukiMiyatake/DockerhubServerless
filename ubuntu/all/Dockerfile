@@ -25,9 +25,7 @@ RUN apt-get install -y perl \
     && curl -L git.io/nodebrew | perl - setup
 ENV PATH=$HOME/.nodebrew/current/bin:$PATH 
 RUN ls -al $HOME/.nodebrew/current/bin
-RUN echo $PATH
 
-RUN echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> $HOME/.bashrc
 RUN nodebrew install v8.10 \
     && nodebrew install v10.15 \
     && nodebrew use v10.15 
@@ -53,6 +51,8 @@ RUN apt-get install -y libsecret-1-dev
 #serverless framework
 RUN npm install -g -y serverless 
 RUN npm install -g serverless-azure-functions
+
+WORKDIR /src
 
 #serverless create --template azure-nodejs --path my-service --name my-unique-name
 #dotnet resutore  dotnet build
