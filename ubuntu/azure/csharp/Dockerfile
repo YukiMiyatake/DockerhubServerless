@@ -6,6 +6,7 @@ ENV HOME /root
 
 #apt
 RUN apt-get update && apt-get install -y curl unzip wget
+RUN apt-get install -y software-properties-common
 
 #ngrok
 RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \
