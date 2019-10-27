@@ -5,7 +5,7 @@ WORKDIR /root
 ENV HOME /root
 
 #apt
-RUN apt-get update && apt-get install -y curl unzip
+RUN apt-get update && apt-get install -y curl unzip software-properties-common
 
 #ngrok
 RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \
@@ -27,8 +27,7 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 #RUN apt-get install -y libsecret-1-dev
 #serverless framework
-RUN npm install -g -y serverless 
-RUN npm install -g serverless-azure-functions
+RUN npm install -g -y serverless serverless-azure-functions azure-functions-core-tools
 
 WORKDIR /src
 
