@@ -6,7 +6,7 @@ ENV HOME /root
 
 #apt
 RUN apt-get update && apt-get install -y curl unzip 
-run apt-get install -y software-properties-common
+RUN apt-get install -y software-properties-common
 
 #node
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash \
